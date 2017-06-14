@@ -1,0 +1,369 @@
+.vertical-center, .calendar__header, .calendar__day-names .calendar__day {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+html {
+  font-size: 62.5%;
+  font-family: "Salesforce Sans", Arial, sans-serif; }
+
+body {
+  background: #EFEFEF; }
+
+.event-item {
+  position: relative;
+  padding: 10px;
+  margin: 15px 0px;
+  font-size: 1.4rem;
+  border: 1px solid #d8dde6; }
+  .event-item__type {
+    position: absolute;
+    right: 15px;
+    top: 13.5px;
+    padding: 6px 10px 4.5px 10px;
+    font-size: 1rem; }
+  .event-item__begin {
+    margin-bottom: 5px; }
+  .event-item__btn, .header__btn {
+    padding: 3px 10px;
+    font-size: 1.2rem;
+    border: 1px solid #e0e5ee; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 30px;
+  background-color: #f7f9fb; }
+  .header__btn {
+    padding: 6px 10px;
+    color: #000;
+    text-transform: uppercase; }
+  .header .legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    margin: 0 15px; }
+    .header .legend__item {
+      position: relative;
+      font-size: 1.3rem;
+      text-transform: uppercase; }
+      .header .legend__item::before {
+        content: '';
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 3px;
+        left: -15px; }
+      .header .legend__item--webinar::before {
+        background-color: #9AC4F8; }
+      .header .legend__item--event::before {
+        background-color: #F8BB67; }
+      .header .legend__item--lecture::before {
+        background-color: #82C086; }
+      .header .legend__item--deadline::before {
+        background-color: #E67A7D; }
+      .header .legend__item--workshop::before {
+        background-color: #b950dc; }
+
+.calendar-wrapper {
+  display: flex; }
+
+.calendar__row {
+  display: flex;
+  width: 100%; }
+
+.calendar {
+  background: #fff;
+  width: calc(100% - 360px);
+  border: solid 1px #d8dde6;
+  font-size: 1.3rem;
+  text-align: center; }
+  .calendar__header {
+    color: #546990;
+    background-color: #e4eaf5;
+    cursor: default;
+    font-size: 1.4rem;
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    user-select: none; }
+  .calendar__month-display {
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    background: #f7f9fb; }
+  .calendar__month-label {
+    flex: 1; }
+  .calendar .arrow {
+    text-align: center;
+    flex-basis: 15%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background .2s;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .calendar .arrow:hover {
+      background: #bfc9dc; }
+  .calendar__week {
+    border-top: solid 1px #d8dde6; }
+    .calendar__week:first-child {
+      border-top: none; }
+  .calendar__day {
+    flex: 1;
+    text-align: right;
+    padding: 15px;
+    height: 120px;
+    border-left: solid 1px #d8dde6;
+    cursor: pointer;
+    color: #546990;
+    background-color: #fff;
+    transition: all .35s; }
+    .calendar__day.webinar {
+      background-color: #9AC4F8; }
+      .calendar__day.webinar:hover, .calendar__day.webinar:focus, .calendar__day.webinar:active, .calendar__day.webinar.selected {
+        background-color: #3b8cf1; }
+    .calendar__day.lecture {
+      background-color: #82C086; }
+      .calendar__day.lecture:hover, .calendar__day.lecture:focus, .calendar__day.lecture:active, .calendar__day.lecture.selected {
+        background-color: #52a357; }
+    .calendar__day.event {
+      background-color: #F8BB67; }
+      .calendar__day.event:hover, .calendar__day.event:focus, .calendar__day.event:active, .calendar__day.event.selected {
+        background-color: #f6a536; }
+    .calendar__day.deadline {
+      background-color: #E67A7D; }
+      .calendar__day.deadline:hover, .calendar__day.deadline:focus, .calendar__day.deadline:active, .calendar__day.deadline.selected {
+        background-color: #de4f53; }
+    .calendar__day.workshop {
+      background-color: #b950dc; }
+      .calendar__day.workshop:hover, .calendar__day.workshop:focus, .calendar__day.workshop:active, .calendar__day.workshop.selected {
+        background-color: #a62ad0; }
+    .calendar__day:hover {
+      background: #EFEFEF; }
+    .calendar__day:first-child {
+      border-left: none; }
+    .calendar__day.today {
+      background: white; }
+    .calendar__day.different-month {
+      color: #C0C0C0; }
+    .calendar__day.selected {
+      background: #e0e5ee;
+      color: #fff; }
+  .calendar__day-names {
+    color: #546990;
+    font-weight: bold;
+    cursor: default;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    border-top: 1px solid #d8dde6; }
+    .calendar__day-names .calendar__day {
+      height: 40px;
+      text-align: center;
+      cursor: default; }
+      .calendar__day-names .calendar__day:hover {
+        background: inherit; }
+
+.map-wrapper, #map-canvas {
+  height: 500px; }
+
+.timeline {
+  flex: 1;
+  position: relative;
+  width: 360px;
+  background-color: #fff;
+  border-bottom: 1px solid #d8dde6;
+  border-top: 1px solid #d8dde6;
+  z-index: 2; }
+  .timeline .timeline-wrapper {
+    padding: 48px 15px;
+    background-color: #f7f9fb;
+    border-bottom: 1px solid #d8dde6; }
+  .timeline .timeline__close {
+    display: none; }
+  .timeline__preloader {
+    padding: 0 10px;
+    font-size: 14px; }
+  .timeline__date {
+    font-size: 2.5rem; }
+  .timeline__day {
+    font-size: 2rem; }
+
+.event-component {
+  width: 30px;
+  height: calc(100% - 177px); }
+
+.event-list {
+  position: relative;
+  height: calc(100% - 163px);
+  padding: 0px 15px 40px 15px; }
+  .event-list__empty {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 250px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 2rem; }
+
+.slds-spinner_container {
+  background-color: initial; }
+
+.header__btn-wrapper a {
+  margin-left: 10px; }
+
+.event-info {
+  padding: 20px;
+  background-color: #fdfdfd;
+  font-size: 1.8rem;
+  border-bottom: 1px solid #000;
+  font-weight: 100; }
+  .event-info .slds-page-header {
+    position: relative; }
+  .event-info .slds-media__body .slds-page-header__title {
+    font-size: 2.6rem;
+    text-transform: uppercase;
+    font-weight: 400; }
+  .event-info .slds-media__body .slds-text-body--small {
+    font-size: 1.4rem;
+    font-weight: 400; }
+  .event-info .slds-tabs--default__item:first-of-type {
+    padding-left: 0; }
+  .event-info-wrapper, .event-info .resource-wrapper, .event-info .speakers-wrapper {
+    padding: 0 20px; }
+    .event-info-wrapper p, .event-info .resource-wrapper p, .event-info .speakers-wrapper p {
+      margin-bottom: 10px; }
+  .event-info .speaker-heading {
+    margin: 10px 20px 0; }
+  .event-info .speakers-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 0; }
+    .event-info .speakers-wrapper .speaker-item {
+      text-align: center;
+      margin-right: 15px; }
+      .event-info .speakers-wrapper .speaker-item:last-of-type {
+        margin-right: 0; }
+    .event-info .speakers-wrapper img {
+      width: 250px; }
+    .event-info .speakers-wrapper h3 {
+      margin-top: 10px; }
+  .event-info__type {
+    font-size: 1.6rem;
+    font-weight: 400; }
+  .event-info__description {
+    margin: 10px 0;
+    font-weight: 100; }
+  .event-info__location {
+    margin-bottom: 10px; }
+  .event-info__resources {
+    padding: 10px 0;
+    margin: 10px 0; }
+
+.feedback-btn {
+  font-size: 1.6rem; }
+
+.submit-wrapper {
+  padding: 0 20px; }
+
+.feedback {
+  padding: 20px;
+  text-align: center;
+  font-weight: 100; }
+  .feedback .slds-form-element__label, .feedback .slds-form-element .slds-radio [type=radio] + .slds-radio--faux {
+    font-size: 1.8rem; }
+  .feedback textarea {
+    height: 500px;
+    padding: 15px;
+    font-size: 1.5rem; }
+  .feedback__submit {
+    padding: 5px 15px;
+    border: 1px solid #16325c;
+    font-size: 1.6rem;
+    color: #16325c; }
+
+@media (max-width: 784px) {
+  .header {
+    position: fixed;
+    height: 120px;
+    top: 0;
+    justify-content: center;
+    z-index: 1; }
+    .header .legend {
+      width: 100%;
+      margin-bottom: 25px;
+      flex-wrap: wrap; }
+      .header .legend__item {
+        margin-right: 20px; }
+  .map-wrapper, #map-canvas {
+    height: 300px; }
+  .event-info:first-of-type {
+    padding-top: 120px; }
+  .calendar__month-display {
+    border-top: solid 1px #d8dde6; }
+  .calendar {
+    width: 100%;
+    padding-top: 121px;
+    background-color: #f7f9fb; }
+    .calendar .calendar__row {
+      flex-wrap: wrap; }
+      .calendar .calendar__row.calendar__day-names {
+        display: none; }
+      .calendar .calendar__row .calendar__day {
+        width: 100%;
+        flex: none; }
+  .submit-wrapper {
+    text-align: center; }
+  .timeline {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    right: -100%;
+    transition: right .2s ease-in; }
+    .timeline.active {
+      right: 0; }
+  .event-info-wrapper .event-info__map, .event-info .resource-wrapper .event-info__map, .event-info .speakers-wrapper .event-info__map {
+    height: 300px !important; }
+  .event-info .slds-tabs--default__item:first-of-type {
+    padding: 0 .75rem; }
+  .resource-wrapper .slds-tabs--default__nav {
+    flex-wrap: wrap;
+    justify-content: center; }
+  .event-info .speakers-wrapper {
+    justify-content: center; }
+  .event-info .resource-wrapper p {
+    margin-top: 10px; }
+  .resource-wrapper .slds-tabs__content {
+    text-align: center; }
+  .resource-title, .speaker-heading {
+    text-align: center; }
+  .timeline .timeline__close {
+    display: block;
+    padding: 5px 15px;
+    font-size: 1.5rem;
+    color: #16325c;
+    border: 1px solid #e0e5ee;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    border: 1px solid; }
+  .feedback {
+    padding-top: 140px;
+    padding-bottom: 20px; }
+  .feedback textarea {
+    height: 250px; }
+  .feedback .slds-form-element__control {
+    margin: 0 20px; } }
+
+@media (max-width: 430px) {
+  .header .legend {
+    justify-content: center; }
+    .header .legend__item {
+      margin-right: 30px; } }
